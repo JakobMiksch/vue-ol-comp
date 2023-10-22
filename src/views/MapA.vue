@@ -2,6 +2,10 @@
   <div>
     <h1>map A</h1>
   </div>
+
+  <p>COUNT: {{ count }}</p>
+  <button @click="count++">+1</button>
+
   <div id="openlayers-map"/>
 </template>
 
@@ -12,6 +16,9 @@ import Map from 'ol/Map.js';
 import OSM from 'ol/source/OSM.js';
 import TileLayer from 'ol/layer/Tile.js';
 import View from 'ol/View.js';
+import { useCount } from '@/composables/useCount'
+
+const { count } = useCount()
 
 onMounted(()=>{
 
