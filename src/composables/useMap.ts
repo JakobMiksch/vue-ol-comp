@@ -1,51 +1,85 @@
-import { onMounted, ref, type Ref, type ShallowRef } from 'vue'
+import { computed,  readonly, ref, type Ref, type ShallowRef } from 'vue'
 import Map from 'ol/Map.js';
 import OSM from 'ol/source/OSM.js';
 import TileLayer from 'ol/layer/Tile.js';
 import View from 'ol/View.js';
-
+import type { Coordinate } from 'ol/coordinate';
 
 // global state, created in module scope
 const olMap: ShallowRef<Map | undefined> = ref()
+const ready = ref(false)
 const layers = ref()
+const center: Ref<Coordinate | undefined> = ref()
+const resolution: Ref<number | undefined> = ref()
+const zoom: Ref<number | undefined> = ref()
+const zoomRounded = computed(()=>{
+  if (zoom.value) {
+    return Math.round(zoom.value)
+  } else {
+    return undefined
+  }
+})
+
+const increaseZoom = () => {
+  console.log("zoom +1 ")
+  const view = olMap.value?.getView()
+  if (view){
+    view.setZoom(view.getZoom() + 1)
+    // view.setZoom(3)
+    console.log(view.getZoom())
+  }
+}
 
 export function useMap() {
 
-    const initMap = (target: string) => {
-        console.log('INIT MAP')
+  const syncView = (view: View) => {
+    center.value = view.getCenter()
+    resolution.value = view.getResolution()
+    zoom.value = view.getZoom()
+  }
+
+    const init = (target: string, definedView: View) => {
         // TODO: handle case map already exists
 
         // create map if it does not exist yet
         olMap.value = new Map({
             target: target,
-            view: new View({
-              center: [0, 0],
-              zoom: 2,
-            }),
+            view: definedView
           });
 
-          olMap.value.getLayers().on('change:length', (event)=>{
-            console.log(event)
-            console.log(event.target.getArray())
 
+          const view = olMap.value.getView()
+          syncView(view)
+          ready.value = true
+
+          olMap.value.getLayers().on('change:length', (event)=>{
             layers.value = event.target.getArray()
           })
 
 
           olMap.value.addLayer(new TileLayer({
             source: new OSM(),
-          }),)
+          }))
+
+
+          view.on(['change', 'change:center', 'change:resolution'], () => {
+            console.log('CHANGE')
+            syncView(view)
+          })
 
 
 
     }
 
-    // onMounted(() => {
-    // })
 
   return {
-    initMap,
+    init,
+    increaseZoom,
     olMap,
-    layers,
+    layers: readonly(layers),
+    center: readonly(center),
+    zoom: readonly(zoom),
+    zoomRounded,
+    ready: readonly(ready),
   }
 }

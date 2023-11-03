@@ -1,13 +1,16 @@
 <template>
 
-<p>EXTRA OL</p>
-<p>{{ layers ? layers.length : "UNGÜLTIG" }}</p>
+<div v-if="ready">
+    <p>EXTRA OL</p>
+    <p>Count Layers: {{ layers ? layers.length : "UNGÜLTIG" }}</p>
+    <p>Center: {{center}}</p>
+    <p>Zoom: {{zoomRounded}}, {{ zoom }}</p>
+</div>
 
 </template>
 
 <script lang="ts" setup>
 import { useMap } from '@/composables/useMap';
-import Vue from 'vue'
 
-const {layers} = useMap()
+const {ready, layers, center, zoom, zoomRounded} = useMap()
 </script>
