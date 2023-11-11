@@ -5,7 +5,7 @@
 
   <MapExtraPanel></MapExtraPanel>
 
-  <olMap></olMap>
+  <olMap :initial-zoom="10" :initial-center="[20, 48]" :style="{ width: '500px', height: '500px' }" ></olMap>
 </template>
 
 <script setup lang="ts">
