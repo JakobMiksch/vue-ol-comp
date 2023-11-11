@@ -4,17 +4,14 @@
 
 <script setup lang="ts">
 import { useOl } from '@/composables/useOl';
-import { View, Feature } from 'ol';
+import { View } from 'ol';
 import type { Coordinate } from 'ol/coordinate';
-import { Point } from 'ol/geom';
-import VectorLayer from 'ol/layer/Vector';
 import { useGeographic } from 'ol/proj';
-import VectorSource from 'ol/source/Vector';
 import { onMounted, ref } from 'vue';
 
 // TODO: does it work with permalink?
 
-const { init, olMap, ready } = useOl()
+const { init, map, ready } = useOl()
 
 // TODO: add type
 const olMapRef = ref()
@@ -35,16 +32,8 @@ onMounted(() => {
     })
     if (!ready.value) {
         init(olMapRef.value, view)
-
-        // TODO: remove or move somewhere else
-        olMap.value?.addLayer(new VectorLayer({
-            source: new VectorSource({
-                features: [new Feature(new Point([10.5, 48.5]))]
-            })
-        }))
-
     } else {
-        olMap.value?.setTarget(olMapRef.value)
+        map.value?.setTarget(olMapRef.value)
     }
 })
 </script>

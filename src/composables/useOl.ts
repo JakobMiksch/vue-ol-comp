@@ -6,7 +6,7 @@ import View from 'ol/View.js';
 import type { Coordinate } from 'ol/coordinate';
 
 // global state, created in module scope
-const olMap: ShallowRef<Map | undefined> = ref()
+const map: ShallowRef<Map | undefined> = ref()
 const ready = ref(false)
 const layers = ref()
 const center: Ref<Coordinate | undefined> = ref()
@@ -21,13 +21,13 @@ const zoomRounded = computed(() => {
 })
 
 const increaseZoom = () => {
-  const view = olMap.value?.getView()
+  const view = map.value?.getView()
   if (view) {
     view.setZoom(view.getZoom() + 1)
   }
 }
 const decreaseZoom = () => {
-  const view = olMap.value?.getView()
+  const view = map.value?.getView()
   if (view) {
     view.setZoom(view.getZoom() - 1)
   }
@@ -45,20 +45,20 @@ export function useOl() {
     // TODO: handle case map already exists
 
     // create map if it does not exist yet
-    olMap.value = new Map({
+    map.value = new Map({
       target: target,
       view: definedView
     });
 
-    const view = olMap.value.getView()
+    const view = map.value.getView()
     syncView(view)
     ready.value = true
 
-    olMap.value.getLayers().on('change:length', (event) => {
+    map.value.getLayers().on('change:length', (event) => {
       layers.value = event.target.getArray()
     })
 
-    olMap.value.addLayer(new TileLayer({
+    map.value.addLayer(new TileLayer({
       source: new OSM(),
     }))
 
@@ -73,7 +73,7 @@ export function useOl() {
     init,
     increaseZoom,
     decreaseZoom,
-    olMap,
+    map,
     layers: readonly(layers),
     center: readonly(center),
     zoom: readonly(zoom),
