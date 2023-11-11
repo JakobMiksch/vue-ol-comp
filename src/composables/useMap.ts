@@ -21,12 +21,15 @@ const zoomRounded = computed(()=>{
 })
 
 const increaseZoom = () => {
-  console.log("zoom +1 ")
   const view = olMap.value?.getView()
   if (view){
     view.setZoom(view.getZoom() + 1)
-    // view.setZoom(3)
-    console.log(view.getZoom())
+  }
+}
+const decreaseZoom = () => {
+  const view = olMap.value?.getView()
+  if (view){
+    view.setZoom(view.getZoom() - 1)
   }
 }
 
@@ -75,6 +78,7 @@ export function useMap() {
   return {
     init,
     increaseZoom,
+    decreaseZoom,
     olMap,
     layers: readonly(layers),
     center: readonly(center),

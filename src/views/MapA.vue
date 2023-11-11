@@ -23,32 +23,24 @@ import { useGeographic } from 'ol/proj';
 const { init, olMap, ready } = useMap()
 
 onMounted(()=>{
-
   useGeographic()
 
-  setTimeout(()=>{
-    const view = new View({
-                center: [10,48],
-                zoom: 6,
-              })
-    if (!ready.value) {
-      init('openlayers-map', view)
-      setTimeout(()=>{
-        olMap.value?.addLayer(new VectorLayer({
-          source: new VectorSource({
-            features: [new Feature(new Point([10.5, 48.5] ))]
-          })
-        }))
-      }, 3000)
-    } else {
-      olMap.value?.setTarget('')
-      olMap.value?.setTarget('openlayers-map')
-    }
+  const view = new View({
+              center: [10,48],
+              zoom: 6,
+            })
+  if (!ready.value) {
+    init('openlayers-map', view)
+    olMap.value?.addLayer(new VectorLayer({
+      source: new VectorSource({
+        features: [new Feature(new Point([10.5, 48.5] ))]
+      })
+    }))
 
-  }, 1000)
-
-
-
+  } else {
+    olMap.value?.setTarget('')
+    olMap.value?.setTarget('openlayers-map')
+  }
 })
 
 </script>
