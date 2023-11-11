@@ -1,4 +1,4 @@
-import { computed,  readonly, ref, type Ref, type ShallowRef } from 'vue'
+import { computed, readonly, ref, type Ref, type ShallowRef } from 'vue'
 import Map from 'ol/Map.js';
 import OSM from 'ol/source/OSM.js';
 import TileLayer from 'ol/layer/Tile.js';
@@ -12,7 +12,7 @@ const layers = ref()
 const center: Ref<Coordinate | undefined> = ref()
 const resolution: Ref<number | undefined> = ref()
 const zoom: Ref<number | undefined> = ref()
-const zoomRounded = computed(()=>{
+const zoomRounded = computed(() => {
   if (zoom.value) {
     return Math.round(zoom.value)
   } else {
@@ -22,13 +22,13 @@ const zoomRounded = computed(()=>{
 
 const increaseZoom = () => {
   const view = olMap.value?.getView()
-  if (view){
+  if (view) {
     view.setZoom(view.getZoom() + 1)
   }
 }
 const decreaseZoom = () => {
   const view = olMap.value?.getView()
-  if (view){
+  if (view) {
     view.setZoom(view.getZoom() - 1)
   }
 }
@@ -41,37 +41,32 @@ export function useOl() {
     zoom.value = view.getZoom()
   }
 
-    const init = (target: string, definedView: View) => {
-        // TODO: handle case map already exists
+  const init = (target: string | HTMLElement, definedView: View) => {
+    // TODO: handle case map already exists
 
-        // create map if it does not exist yet
-        olMap.value = new Map({
-            target: target,
-            view: definedView
-          });
+    // create map if it does not exist yet
+    olMap.value = new Map({
+      target: target,
+      view: definedView
+    });
 
+    const view = olMap.value.getView()
+    syncView(view)
+    ready.value = true
 
-          const view = olMap.value.getView()
-          syncView(view)
-          ready.value = true
+    olMap.value.getLayers().on('change:length', (event) => {
+      layers.value = event.target.getArray()
+    })
 
-          olMap.value.getLayers().on('change:length', (event)=>{
-            layers.value = event.target.getArray()
-          })
+    olMap.value.addLayer(new TileLayer({
+      source: new OSM(),
+    }))
 
+    view.on(['change', 'change:center', 'change:resolution'], () => {
+      syncView(view)
+    })
 
-          olMap.value.addLayer(new TileLayer({
-            source: new OSM(),
-          }))
-
-
-          view.on(['change', 'change:center', 'change:resolution'], () => {
-            syncView(view)
-          })
-
-
-
-    }
+  }
 
 
   return {
