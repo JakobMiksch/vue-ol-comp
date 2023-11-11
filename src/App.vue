@@ -8,7 +8,8 @@
       <nav>
         <RouterLink to="/">Home</RouterLink> <br>
         <RouterLink to="/mapA">mapA</RouterLink> <br>
-        <RouterLink to="/mapB">mapB</RouterLink>
+        <RouterLink to="/mapB">mapB</RouterLink> <br>
+        <RouterLink to="/mapC">mapC</RouterLink>
       </nav>
     </div>
   </header>
