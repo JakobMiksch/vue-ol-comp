@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useGeographic } from 'ol/proj';
+useGeographic()
 </script>
 
 <template>

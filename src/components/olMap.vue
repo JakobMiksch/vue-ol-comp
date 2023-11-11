@@ -24,16 +24,15 @@ interface Props {
 
 const props = defineProps<Props>()
 onMounted(() => {
-    useGeographic()
 
-    const view = new View({
-        center: props.initialCenter || [10, 48],
-        zoom: props.initialZoom || 4,
-    })
-    if (!ready.value) {
-        init(olMapRef.value, view)
-    } else {
+    if (ready.value) {
         map.value?.setTarget(olMapRef.value)
+    } else {
+        const view = new View({
+            center: props.initialCenter || [10, 48],
+            zoom: props.initialZoom || 4,
+        })
+        init(olMapRef.value, view)
     }
 })
 </script>

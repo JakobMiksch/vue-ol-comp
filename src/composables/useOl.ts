@@ -42,7 +42,6 @@ export function useOl() {
   }
 
   const init = (target: string | HTMLElement, definedView: View) => {
-    // TODO: handle case map already exists
 
     // create map if it does not exist yet
     map.value = new Map({
