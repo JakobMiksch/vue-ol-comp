@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useMap } from '@/composables/useMap';
+import { useOl } from '@/composables/useOl';
 
-const {ready, layers, center, zoom, zoomRounded} = useMap()
+const {ready, layers, center, zoom, zoomRounded} = useOl()
 </script>

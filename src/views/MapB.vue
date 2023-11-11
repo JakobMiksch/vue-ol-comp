@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 import MapExtraPanel from '@/components/MapExtraPanel.vue';
-import { useMap } from '@/composables/useMap';
-const { increaseZoom, decreaseZoom } = useMap()
+import { useOl } from '@/composables/useOl';
+const { increaseZoom, decreaseZoom } = useOl()
 
 </script>
 

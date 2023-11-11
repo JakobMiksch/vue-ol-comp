@@ -11,7 +11,7 @@
 <script setup lang="ts">
 
 import { onMounted} from 'vue'
-import { useMap } from '@/composables/useMap'
+import { useOl } from '@/composables/useOl'
 import MapExtraPanel from '@/components/MapExtraPanel.vue';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
@@ -20,7 +20,7 @@ import { Point } from 'ol/geom';
 import { View } from 'ol';
 import { useGeographic } from 'ol/proj';
 
-const { init, olMap, ready } = useMap()
+const { init, olMap, ready } = useOl()
 
 onMounted(()=>{
   useGeographic()

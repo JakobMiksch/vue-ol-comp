@@ -33,7 +33,7 @@ const decreaseZoom = () => {
   }
 }
 
-export function useMap() {
+export function useOl() {
 
   const syncView = (view: View) => {
     center.value = view.getCenter()
@@ -66,7 +66,6 @@ export function useMap() {
 
 
           view.on(['change', 'change:center', 'change:resolution'], () => {
-            console.log('CHANGE')
             syncView(view)
           })
 
