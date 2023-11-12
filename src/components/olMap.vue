@@ -5,8 +5,6 @@
 <script setup lang="ts">
 import { useOl } from '@/composables/useOl';
 import { View } from 'ol';
-import type { Coordinate } from 'ol/coordinate';
-import { useGeographic } from 'ol/proj';
 import { onMounted, ref } from 'vue';
 
 // TODO: does it work with permalink?
@@ -17,9 +15,7 @@ const { init, map, ready } = useOl()
 const olMapRef = ref()
 
 interface Props {
-    // TODO: ensure it has valid value
-    initialZoom?: number
-    initialCenter?: Coordinate
+    initialView?: View
 }
 
 const props = defineProps<Props>()
@@ -29,10 +25,10 @@ onMounted(() => {
         map.value?.setTarget(olMapRef.value)
     } else {
         const view = new View({
-            center: props.initialCenter || [10, 48],
-            zoom: props.initialZoom || 4,
+            center:[10, 48],
+            zoom:  4,
         })
-        init(olMapRef.value, view)
+        init(olMapRef.value, props.initialView || view)
     }
 })
 </script>

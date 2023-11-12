@@ -33,6 +33,9 @@ const decreaseZoom = () => {
   }
 }
 
+// create multiple instances as described here
+// https://stackoverflow.com/questions/73897102/vue-composable-how-to-use-multiple-instances-of-composable-without-sharing-sta
+
 export function useOl() {
 
   const syncView = (view: View) => {
