@@ -4,6 +4,11 @@ import OSM from 'ol/source/OSM.js';
 import TileLayer from 'ol/layer/Tile.js';
 import View from 'ol/View.js';
 import type { Coordinate } from 'ol/coordinate';
+import { createEventHook } from '@vueuse/shared';
+import type { MapBrowserEvent } from 'ol';
+import type MapBrowserEventType from 'ol/MapBrowserEventType';
+
+
 
 // global state, created in module scope
 const map: ShallowRef<Map | undefined> = ref()
@@ -19,6 +24,8 @@ const zoomRounded = computed(() => {
     return undefined
   }
 })
+
+const { on: onMapClick, trigger: triggerMapClick } = createEventHook<MapBrowserEvent<any>>()
 
 const increaseZoom = () => {
   const view = map.value?.getView()
@@ -37,6 +44,8 @@ const decreaseZoom = () => {
 // https://stackoverflow.com/questions/73897102/vue-composable-how-to-use-multiple-instances-of-composable-without-sharing-sta
 
 export function useOl() {
+
+
 
   const syncView = (view: View) => {
     center.value = view.getCenter()
@@ -68,6 +77,9 @@ export function useOl() {
       syncView(view)
     })
 
+
+    map.value.on('click', triggerMapClick)
+
   }
 
 
@@ -75,6 +87,7 @@ export function useOl() {
     init,
     increaseZoom,
     decreaseZoom,
+    onMapClick,
     map,
     layers: readonly(layers),
     center: readonly(center),

@@ -12,7 +12,15 @@
 
 import MapExtraPanel from '@/components/MapExtraPanel.vue';
 import olMap from '@/components/olMap.vue';
+import { useOl } from '@/composables/useOl';
 import { View } from 'ol';
+
+const {onMapClick} = useOl()
+
+onMapClick((event)=>{
+  const {target} = event
+  console.log(event)
+}) 
 
 // TODO: activate somehow that it is only added once
 // map.value?.addLayer(new VectorLayer({
