@@ -1,3 +1,18 @@
+<template>
+  <header>
+    <div class="wrapper">
+      <nav>
+        <RouterLink to="/">Home</RouterLink> <br />
+        <RouterLink to="/mapA">mapA</RouterLink> <br />
+        <RouterLink to="/mapB">mapB</RouterLink> <br />
+        <RouterLink to="/mapC">mapC</RouterLink>
+      </nav>
+    </div>
+  </header>
+
+  <RouterView />
+</template>
+
 <script setup lang="ts">
 import { useGeographic } from 'ol/proj'
 import { onMounted } from 'vue'
@@ -20,20 +35,3 @@ onMounted(() => {
   init(new View({ center: [11, 47], zoom: 18 }))
 })
 </script>
-
-<template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink> <br />
-        <RouterLink to="/mapA">mapA</RouterLink> <br />
-        <RouterLink to="/mapB">mapB</RouterLink> <br />
-        <RouterLink to="/mapC">mapC</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
-</template>
-
-<style scoped></style>

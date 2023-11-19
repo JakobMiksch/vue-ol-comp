@@ -10,8 +10,7 @@ import { onMounted, ref } from 'vue'
 
 const { map } = useOl()
 
-// TODO: add type
-const olMapRef = ref()
+const olMapRef = ref<InstanceType<typeof HTMLDivElement>>()
 
 onMounted(() => {
   map.value?.setTarget(olMapRef.value)
