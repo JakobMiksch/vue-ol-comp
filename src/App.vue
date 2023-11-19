@@ -19,21 +19,23 @@ import { onMounted } from 'vue'
 import { useOl } from './composables/useOl'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
-import Link from 'ol/interaction/Link'
 
 const { map } = useOl()
 
 useGeographic()
 
 onMounted(() => {
+  console.log('MOUNT')
   // init map globally
   map.value.addLayer(
     new TileLayer({
       source: new OSM()
     })
   )
-  // init(new View({ center: [11, 47], zoom: 18 }))
 
-  map.value.addInteraction(new Link())
+  map.value.getView().setCenter([11, 47])
+  map.value.getView().setZoom(15)
+
+  // map.value.addInteraction(new Link())
 })
 </script>
