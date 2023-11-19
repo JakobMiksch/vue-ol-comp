@@ -1,5 +1,5 @@
 <template>
-  <div v-if="ready">
+  <div>
     <p>EXTRA OL</p>
     <p>Count Layers: {{ layers ? layers.length : 'UNGÜLTIG' }}</p>
     <p>Center: {{ center }}</p>
@@ -16,7 +16,6 @@
 import { useOl } from '@/composables/useOl'
 
 const {
-  ready,
   layers,
   center,
   zoom,

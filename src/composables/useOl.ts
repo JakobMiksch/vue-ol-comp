@@ -7,8 +7,7 @@ import type { MapBrowserEvent } from 'ol'
 import type { Extent } from 'ol/extent'
 
 // global state, created in module scope
-const map: ShallowRef<Map> = shallowRef(new Map())
-const ready = ref(false)
+const map: ShallowRef<Map> = shallowRef(new Map({ view: new View({ center: [0, 0], zoom: 1 }) }))
 const layers = ref()
 const center: Ref<Coordinate | undefined> = ref()
 const extent: Ref<Extent | undefined> = ref()
@@ -65,19 +64,13 @@ map.value.on('moveend', () => {
 })
 
 export function useOl() {
-  const init = (definedView: View) => {
-    if (ready.value) return
-    map.value.setView(definedView)
-    const view = map.value.getView()
-    view.on(['change', 'change:center', 'change:resolution'], () => {
-      syncView(view)
-    })
+  const view = map.value.getView()
+  view.on(['change', 'change:center', 'change:resolution'], () => {
     syncView(view)
-    ready.value = true
-  }
+  })
+  syncView(view)
 
   return {
-    init,
     onMapClick,
     onMapSingleClick,
     map,
@@ -88,7 +81,6 @@ export function useOl() {
     mapMoving: readonly(mapMoving),
     zoom: readonly(zoom),
     zoomRounded,
-    ready: readonly(ready),
     pointerCoordinate: readonly(pointerCoordinate),
     pointerPixel: readonly(pointerPixel)
   }

@@ -17,11 +17,10 @@
 import { useGeographic } from 'ol/proj'
 import { onMounted } from 'vue'
 import { useOl } from './composables/useOl'
-import { View } from 'ol'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
 
-const { init, map } = useOl()
+const { map } = useOl()
 
 useGeographic()
 
@@ -32,6 +31,6 @@ onMounted(() => {
       source: new OSM()
     })
   )
-  init(new View({ center: [11, 47], zoom: 18 }))
+  // init(new View({ center: [11, 47], zoom: 18 }))
 })
 </script>
