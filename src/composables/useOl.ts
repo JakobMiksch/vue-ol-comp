@@ -29,13 +29,6 @@ const { on: onMapClick, trigger: triggerMapClick } = createEventHook<MapBrowserE
 const { on: onMapSingleClick, trigger: triggerMapSingleClick } =
   createEventHook<MapBrowserEvent<any>>()
 
-const syncView = (view: View) => {
-  center.value = view?.getCenter()
-  resolution.value = view?.getResolution()
-  zoom.value = view?.getZoom()
-  extent.value = view?.calculateExtent()
-}
-
 map.value.getLayers().on('change:length', (event) => {
   layers.value = event.target.getArray()
 })
@@ -63,13 +56,19 @@ map.value.on('moveend', () => {
   mapMoving.value = false
 })
 
-export function useOl() {
-  const view = map.value.getView()
-  view.on(['change', 'change:center', 'change:resolution'], () => {
-    syncView(view)
-  })
+const view = map.value.getView()
+const syncView = (view: View) => {
+  center.value = view?.getCenter()
+  resolution.value = view?.getResolution()
+  zoom.value = view?.getZoom()
+  extent.value = view?.calculateExtent()
+}
+view.on(['change', 'change:center', 'change:resolution'], () => {
   syncView(view)
+})
+syncView(view)
 
+export function useOl() {
   return {
     onMapClick,
     onMapSingleClick,

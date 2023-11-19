@@ -19,6 +19,7 @@ import { onMounted } from 'vue'
 import { useOl } from './composables/useOl'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
+import Link from 'ol/interaction/Link'
 
 const { map } = useOl()
 
@@ -32,5 +33,7 @@ onMounted(() => {
     })
   )
   // init(new View({ center: [11, 47], zoom: 18 }))
+
+  map.value.addInteraction(new Link())
 })
 </script>
