@@ -4,11 +4,8 @@
   </div>
 
   <MapExtraPanel></MapExtraPanel>
-
 </template>
 
 <script setup lang="ts">
-import MapExtraPanel from '@/components/MapExtraPanel.vue';
-
+import MapExtraPanel from '@/components/MapExtraPanel.vue'
 </script>
-

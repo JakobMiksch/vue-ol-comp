@@ -1,7 +1,5 @@
 import { computed, readonly, ref, shallowRef, type Ref, type ShallowRef } from 'vue'
 import Map from 'ol/Map.js'
-import OSM from 'ol/source/OSM.js'
-import TileLayer from 'ol/layer/Tile.js'
 import View from 'ol/View.js'
 import type { Coordinate } from 'ol/coordinate'
 import { createEventHook } from '@vueuse/shared'
@@ -29,7 +27,8 @@ const zoomRounded = computed(() => {
 })
 
 const { on: onMapClick, trigger: triggerMapClick } = createEventHook<MapBrowserEvent<any>>()
-const { on: onMapSingleClick, trigger: triggerMapSingleClick } = createEventHook<MapBrowserEvent<any>>()
+const { on: onMapSingleClick, trigger: triggerMapSingleClick } =
+  createEventHook<MapBrowserEvent<any>>()
 
 const syncView = (view: View) => {
   center.value = view?.getCenter()
@@ -42,17 +41,11 @@ map.value.getLayers().on('change:length', (event) => {
   layers.value = event.target.getArray()
 })
 
-map.value.addLayer(
-  new TileLayer({
-    source: new OSM()
-  })
-)
-
 // TODO: remove listener on unmount
 
 map.value.on('click', triggerMapClick)
 map.value.on('singleclick', triggerMapSingleClick)
-map.value.on('pointermove', (event)=>{
+map.value.on('pointermove', (event) => {
   pointerCoordinate.value = event.coordinate
   pointerPixel.value = event.pixel
 })
@@ -63,7 +56,6 @@ map.value.on('loadstart', () => {
 map.value.on('loadend', (event) => {
   mapLoading.value = false
   console.log(event)
-
 })
 map.value.on('movestart', () => {
   mapMoving.value = true
@@ -72,10 +64,8 @@ map.value.on('moveend', () => {
   mapMoving.value = false
 })
 
-
 export function useOl() {
-
-  const init = ( definedView: View) => {
+  const init = (definedView: View) => {
     if (ready.value) return
     map.value.setView(definedView)
     const view = map.value.getView()
@@ -100,6 +90,6 @@ export function useOl() {
     zoomRounded,
     ready: readonly(ready),
     pointerCoordinate: readonly(pointerCoordinate),
-    pointerPixel: readonly(pointerPixel),
+    pointerPixel: readonly(pointerPixel)
   }
 }
