@@ -1,8 +1,6 @@
 <template>
   <div>
     <h1>map B</h1>
-    <button @click="increaseZoom()">Zoom + 1</button>
-    <button @click="decreaseZoom()">Zoom - 1</button>
   </div>
 
   <MapExtraPanel></MapExtraPanel>
@@ -11,11 +9,6 @@
 
 <script setup lang="ts">
 import MapExtraPanel from '@/components/MapExtraPanel.vue';
-import { useOl } from '@/composables/useOl';
-const { increaseZoom, decreaseZoom } = useOl()
 
 </script>
 
-<style>
-
-</style>
