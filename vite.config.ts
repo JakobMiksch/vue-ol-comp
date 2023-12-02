@@ -17,9 +17,6 @@ export default defineConfig({
       fileName: "vue-ol-composable",
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      // TODO: add OpenLayers
       external: ["vue", "vue-router", "ol"],
       output: {
         // Provide global variables to use in the UMD build

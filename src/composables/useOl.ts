@@ -25,9 +25,9 @@ const zoomRounded = computed(() => {
   }
 })
 
-const { on: onMapClick, trigger: triggerMapClick } = createEventHook<MapBrowserEvent<any>>()
+const { on: onMapClick, trigger: triggerMapClick } = createEventHook<MapBrowserEvent<PointerEvent>>()
 const { on: onMapSingleClick, trigger: triggerMapSingleClick } =
-  createEventHook<MapBrowserEvent<any>>()
+  createEventHook<MapBrowserEvent<PointerEvent>>()
 
 map.value.getLayers().on('change:length', (event) => {
   layers.value = event.target.getArray()
