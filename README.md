@@ -1,15 +1,12 @@
-# useOl
+# vue-ol-composable
 
-Attempt to create a Vue composable for OpenLayers.
-
-**Disclaimer:** The project is in an alpha state. The API will change and can break any time.
+A Vue3 composable wrapping a OpenLayers map.
 
 ## Usage
 
-TODO
-
 ```shell
-npm i ENTER_PACKAGE_NAME
+# install
+npm i vue-ol-composable
 ```
 
 TODO: Add Quickstart
@@ -20,7 +17,7 @@ TODO
 
 ## Assumptions
 
-- the application uses only one map instance. And the map instance has only one vie instance connected it. While in theory, with OpenLayers you can have multiple map and view instances in the same application, this feature is rarely used.
+- the application uses only one map instance. And the map instance has only one instance connected it. While in theory, with OpenLayers you can have multiple map and view instances in the same application, this feature is rarely used.
 
 ## Goals
 
