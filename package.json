@@ -1,10 +1,23 @@
 {
-  "name": "useopenlayers",
-  "version": "0.0.0",
-  "private": true,
+  "name": "vue-ol-composable",
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-ol-composable.umd.cjs",
+  "module": "./dist/vue-ol-composable.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-ol-composable.js",
+      "require": "./dist/vue-ol-composable.umd.cjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
+
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
