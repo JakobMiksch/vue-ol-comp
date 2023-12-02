@@ -6,8 +6,6 @@
 import { useOl } from '@/composables/useOl'
 import { onMounted, ref } from 'vue'
 
-// TODO: does it work with permalink?
-
 const { map } = useOl()
 
 const olMapRef = ref<InstanceType<typeof HTMLDivElement>>()
