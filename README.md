@@ -1,6 +1,9 @@
 # vue-ol-composable
 
-A Vue3 composable wrapping a OpenLayers map.
+A Vue 3 composable for an OpenLayers map. It makes map-related properties and events globally accessible in the application, while still giving the developer full control over the OpenLayers API.
+
+It assumes that the application uses a single map instance with a single map view associated with it, as this is the setup that most OpenLayers based mapping applications have.
+
 
 ## Usage
 
@@ -9,38 +12,52 @@ A Vue3 composable wrapping a OpenLayers map.
 npm i vue-ol-composable
 ```
 
-TODO: Add Quickstart
+Initialize or edit the map in any component, for example in `App.vue`:
 
-## API Docs
+```vue
+<script setup lang="ts">
+import { fromLonLat } from 'ol/proj'
+import { onMounted } from 'vue'
+import { useOl } from './composables/useOl'
+import TileLayer from 'ol/layer/Tile'
+import OSM from 'ol/source/OSM'
 
-TODO
+const { map } = useOl()
 
-## Assumptions
+onMounted(() => {
+  map.value.addLayer(
+    new TileLayer({
+      source: new OSM()
+    })
+  )
 
-- the application uses only one map instance. And the map instance has only one instance connected it. While in theory, with OpenLayers you can have multiple map and view instances in the same application, this feature is rarely used.
+  map.value.getView().setCenter(fromLonLat([11, 47]))
+  map.value.getView().setZoom(15)
+})
+</script>
+```
 
-## Goals
+The map can be added to any component like this:
 
-- Make commonly used properties and events of an OpenLayers map easily accessible in a Vue application
-- give the developer access to the raw OpenLayers objects
+```vue
+<template>
+  <olMap :style="{ width: '500px', height: '100px' }"></olMap>
+</template>
+```
 
-## Non-Goals
+## Alternatives ways to use OpenLayers in Vue
 
-- provide multiple map and view instances
-- cover the whole OpenLayers API
-
-## Alternatives
-
-- https://github.com/MelihAltintas/vue3-openlayers
-- https://github.com/ghettovoice/vuelayers
-- https://github.com/wegue-oss/wegue/
-- use OpenLayers directly with Vue
+- **directly** without any additional library. This is done in the application template [Wegue](https://github.com/wegue-oss/wegue/) or described in this [blog post](https://spatial-dev.guru/2022/02/20/integrating-openlayers-map-with-vuejs-create-map-part-1/)
+- using a **component library** like [vue3-openlayers](https://github.com/MelihAltintas/vue3-openlayers)(for Vue 3) or [vuelayers](https://github.com/ghettovoice/vuelayers) - (for Vue 2) that let's one configure the map via the `<template>` section
 
 ## Development
 
 ```shell
-npm i
-npm run dev
-TODO
-```
+# install dependencies
+npm install
 
+# run the development application
+npm run dev
+
+# the application will be accessible at http://localhost:5173/
+```
