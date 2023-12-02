@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
   ],
   build: {
+    copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "vue-ol-composable",
@@ -19,7 +20,7 @@ export default defineConfig({
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       // TODO: add OpenLayers
-      external: ["vue", "vue-router"],
+      external: ["vue", "vue-router", "ol"],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
