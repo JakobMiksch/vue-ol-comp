@@ -15,9 +15,9 @@ export default defineConfig({
     copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      formats: ['es']
-      // name: "vue-ol-composable",
-      // fileName: "vue-ol-composable",
+      // formats: ['es']
+      name: "VueOlComposable",
+      fileName: "vue-ol-composable",
     },
     rollupOptions: {
       external: ["vue", "vue-router", "ol"],

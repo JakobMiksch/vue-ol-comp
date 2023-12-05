@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useOl } from '@/composables/useOl'
+import { useOl } from '../composables/useOl'
 
 const {
   layers,
