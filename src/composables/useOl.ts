@@ -25,7 +25,8 @@ const zoomRounded = computed(() => {
   }
 })
 
-const { on: onMapClick, trigger: triggerMapClick } = createEventHook<MapBrowserEvent<PointerEvent>>()
+const { on: onMapClick, trigger: triggerMapClick } =
+  createEventHook<MapBrowserEvent<PointerEvent>>()
 const { on: onMapSingleClick, trigger: triggerMapSingleClick } =
   createEventHook<MapBrowserEvent<PointerEvent>>()
 
