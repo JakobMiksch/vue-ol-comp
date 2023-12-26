@@ -1,11 +1,23 @@
 <template>
   <div :style="{ display: 'flex' }">
-    <olMap :style="{ minWidth: '100px', width: '80%' }" />
-    <MapExtraPanel :style="{ minWidth: '100px', width: '20%', 'margin-left': '5px' }" />
+    <OlMap :style="{ minWidth: '100px', width: '80%' }" />
+
+    <div
+      :style="{
+        minWidth: '100px',
+        width: '20%',
+        'padding-left': '5px',
+        'border-left': '1px solid black'
+      }"
+    >
+      <MapControlPanel />
+      <MapInfoPanel />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import olMap from '@/components/olMap.vue'
-import MapExtraPanel from '@/components/MapExtraPanel.vue'
+import OlMap from '@/components/OlMap.vue'
+import MapInfoPanel from '@/components/MapInfoPanel.vue'
+import MapControlPanel from '../components/MapControlPanel.vue'
 </script>
