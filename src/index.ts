@@ -1,4 +1,4 @@
-import olMap from './components/olMap.vue'
+import OlMap from './components/OlMap.vue'
 import { useOl } from './composables/useOl'
 
-export { olMap, useOl }
+export { OlMap, useOl }

@@ -46,9 +46,8 @@ map.value.on('pointermove', (event) => {
 map.value.on('loadstart', () => {
   mapLoading.value = true
 })
-map.value.on('loadend', (event) => {
+map.value.on('loadend', () => {
   mapLoading.value = false
-  console.log(event)
 })
 map.value.on('movestart', () => {
   mapMoving.value = true
