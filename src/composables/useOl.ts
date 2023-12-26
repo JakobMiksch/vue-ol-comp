@@ -8,7 +8,7 @@ import type { Extent } from 'ol/extent'
 
 // global state, created in module scope
 const map: ShallowRef<Map> = shallowRef(new Map({ view: new View({ center: [0, 0], zoom: 1 }) }))
-const layers = ref()
+const layers: Ref<Array<any>> = ref([]) // TODO: add proper layer type
 const center: Ref<Coordinate | undefined> = ref()
 const extent: Ref<Extent | undefined> = ref()
 const resolution: Ref<number | undefined> = ref()

@@ -10,16 +10,12 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/mapA',
-      component: () => import('../views/MapA.vue')
+      path: '/only-map',
+      component: () => import('../views/OnlyMap.vue')
     },
     {
-      path: '/mapB',
-      component: () => import('../views/MapB.vue')
-    },
-    {
-      path: '/mapC',
-      component: () => import('../views/MapC.vue')
+      path: '/only-info',
+      component: () => import('../views/OnlyInfo.vue')
     }
   ]
 })

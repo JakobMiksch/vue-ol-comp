@@ -1,8 +1,4 @@
 <template>
-  <div>
-    <h1>map B</h1>
-  </div>
-
   <MapExtraPanel></MapExtraPanel>
 </template>
 

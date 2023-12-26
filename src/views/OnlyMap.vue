@@ -1,5 +1,10 @@
 <template>
-  <olMap :style="{ width: '500px', height: '100px' }"></olMap>
+  <olMap
+    :style="{
+      height: '100%',
+      width: '100%'
+    }"
+  />
 </template>
 
 <script setup lang="ts">

@@ -1,16 +1,18 @@
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink> <br />
-        <RouterLink to="/mapA">mapA</RouterLink> <br />
-        <RouterLink to="/mapB">mapB</RouterLink> <br />
-        <RouterLink to="/mapC">mapC</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div style="display: flex; flex-direction: column; height: 100vh">
+    <nav :style="{ display: 'flex', 'border-bottom': '1px solid black' }">
+      <RouterLink
+        v-for="(route, index) in routes"
+        :key="index"
+        class="router-link"
+        :to="route.to"
+        :style="currentRoute.path === route.to ? { 'font-weight': 'bold' } : {}"
+      >
+        {{ route.title }}
+      </RouterLink>
+    </nav>
+    <RouterView style="flex-grow: 1" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -19,8 +21,16 @@ import { onMounted } from 'vue'
 import { useOl } from './composables/useOl'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
+import { useRoute } from 'vue-router'
 
 const { map } = useOl()
+const currentRoute = useRoute()
+
+const routes = [
+  { to: '/', title: 'Map and Info' },
+  { to: '/only-map', title: 'Only Map' },
+  { to: '/only-info', title: 'Only Info' }
+]
 
 onMounted(() => {
   map.value.addLayer(
@@ -33,3 +43,18 @@ onMounted(() => {
   map.value.getView().setZoom(15)
 })
 </script>
+
+<style>
+.router-link {
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.router-link:hover {
+  text-decoration: underline;
+}
+
+.router-link:visited {
+  color: unset;
+}
+</style>
