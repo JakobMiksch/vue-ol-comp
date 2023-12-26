@@ -1,8 +1,7 @@
 @import 'ol/ol.css';
 
 body {
-    margin: unset;
-    /* font-family: 'Roboto', sans-serif; */
-    font-family: 'Courier New', Courier, 'Lucida Console', 'DejaVu Sans Mono', monospace;
-
+  margin: unset;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Courier New', Courier, 'Lucida Console', 'DejaVu Sans Mono', monospace;
 }
