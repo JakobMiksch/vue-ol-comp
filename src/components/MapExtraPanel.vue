@@ -27,16 +27,20 @@ const {
   pointerPixel
 } = useOl()
 
-const { round } = Math
-
+const humanize = (content: readonly any[] | any[] | undefined): string => {
+  if (!content) {
+    return ''
+  }
+  return content.map(Math.round).join(', ')
+}
 const listEntries = computed(() => [
   { title: 'Count Layers', value: layers.value ? layers.value.length : 'UNGÜLTIG' },
-  { title: 'Center', value: center.value?.map(round) },
-  { title: 'Zoom', value: `${zoomRounded.value}, ${round(zoom.value * 100) / 100}` },
-  { title: 'Extent', value: extent.value?.map(round) },
+  { title: 'Center', value: humanize(center?.value) },
+  { title: 'Zoom', value: `${zoomRounded.value}, ${Math.round((zoom.value || 0) * 100) / 100}` },
+  { title: 'Extent', value: humanize(extent.value) },
   { title: 'Map Loading', value: mapLoading.value ? '🟢' : '🔴' },
   { title: 'Map Moving', value: mapMoving.value ? '🟢' : '🔴' },
-  { title: 'Pointer Coordinate', value: pointerCoordinate.value?.map(round) },
-  { title: 'Pointer Pixel', value: pointerPixel.value?.map(round) }
+  { title: 'Pointer Coordinate', value: humanize(pointerCoordinate.value) },
+  { title: 'Pointer Pixel', value: humanize(pointerPixel.value) }
 ])
 </script>
