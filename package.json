@@ -17,9 +17,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
+    "type-check": "vue-tsc",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },

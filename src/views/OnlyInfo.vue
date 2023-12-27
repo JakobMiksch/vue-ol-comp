@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import MapInfoPanel from '@/components/MapInfoPanel.vue'
+import MapInfoPanel from '../components/MapInfoPanel.vue'
 import MapControlPanel from '../components/MapControlPanel.vue'
 </script>
