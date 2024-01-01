@@ -16,8 +16,11 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
-    "type-check": "vue-tsc",
+    "build:app": "vite -c vite.app.config.ts build",
+    "build:lib:code": "vite -c vite.lib.config.ts build",
+    "build:lib:types": "vue-tsc -p tsconfig.lib.json --emitDeclarationOnly",
+    "build:lib": "npm run build:lib:code && npm run build:lib:types",
+    "type-check-lib": "vue-tsc -p tsconfig.lib.json" ,
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
