@@ -35,5 +35,15 @@ button {
   margin-right: 5px;
   font-weight: bold;
   height: fit-content;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #000;
+  color: #fff;
 }
 </style>
