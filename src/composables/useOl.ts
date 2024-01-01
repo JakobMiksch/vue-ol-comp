@@ -5,10 +5,11 @@ import type { Coordinate } from 'ol/coordinate'
 import { createEventHook } from '@vueuse/shared'
 import type { MapBrowserEvent } from 'ol'
 import type { Extent } from 'ol/extent'
+import BaseLayer from 'ol/layer/Base'
 
 // global state, created in module scope
 const map: ShallowRef<Map> = shallowRef(new Map({ view: new View({ center: [0, 0], zoom: 1 }) }))
-const layers: Ref<Array<any>> = ref([]) // TODO: add proper layer type
+const layers: Ref<Array<BaseLayer>> = ref([])
 const center: Ref<Coordinate | undefined> = ref()
 const extent: Ref<Extent | undefined> = ref()
 const resolution: Ref<number | undefined> = ref()
@@ -17,13 +18,7 @@ const pointerCoordinate: Ref<Coordinate> = ref([])
 const pointerPixel: Ref<Coordinate> = ref([])
 const mapLoading = ref(false)
 const mapMoving = ref(false)
-const zoomRounded = computed(() => {
-  if (zoom.value) {
-    return Math.round(zoom.value)
-  } else {
-    return undefined
-  }
-})
+const zoomRounded = computed(() => (zoom.value ? Math.round(zoom.value) : undefined))
 
 const { on: onMapClick, trigger: triggerMapClick } =
   createEventHook<MapBrowserEvent<PointerEvent>>()
@@ -72,7 +67,8 @@ export function useOl() {
   return {
     onMapClick,
     onMapSingleClick,
-    map,
+    // NOTE: readonly does not work on map, but computed does to prevent it is re-written
+    map: computed(() => map.value),
     layers: readonly(layers),
     center: readonly(center),
     extent: readonly(extent),
