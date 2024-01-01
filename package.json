@@ -5,6 +5,10 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "npm": ">=8.0.0 <11.0.0",
+    "node": ">18.0.0 <21.0.0"
+  },
   "main": "./dist/vue-ol-composable.umd.cjs",
   "module": "./dist/vue-ol-composable.js",
   "exports": {
@@ -17,10 +21,11 @@
   "scripts": {
     "dev": "vite",
     "build:app": "vite -c vite.app.config.ts build",
+    "build:lib": "npm run build:lib:code && npm run build:lib:types",
     "build:lib:code": "vite -c vite.lib.config.ts build",
     "build:lib:types": "vue-tsc -p tsconfig.lib.json --emitDeclarationOnly",
-    "build:lib": "npm run build:lib:code && npm run build:lib:types",
-    "type-check-lib": "vue-tsc -p tsconfig.lib.json" ,
+    "type-check:lib": "vue-tsc -p tsconfig.lib.json" ,
+    "type-check:app": "vue-tsc --noEmit --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
