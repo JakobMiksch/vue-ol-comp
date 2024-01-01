@@ -2,9 +2,9 @@
 
 **Note**: Project is in **beta**
 
-A Vue 3 composable for an OpenLayers map. It makes map-related properties and events globally accessible in the application, while still giving the developer full control over the OpenLayers API.
+A [Vue.js](https://vuejs.org/) [composable](https://vuejs.org/guide/reusability/composables) for an [OpenLayers](https://openlayers.org/) map. It makes map-related properties and events globally accessible in the application, while still giving the developer full control over the OpenLayers API.
 
-It assumes that the application uses a single map instance with a single map view associated with it, as this is the setup that most OpenLayers based mapping applications have.
+It assumes the application uses a single map instance with a single map view associated with it, as this is the setup that most OpenLayers based mapping applications have.
 
 ## Development
 
@@ -17,7 +17,6 @@ npm run dev
 
 # the application will be accessible at http://localhost:5173/
 ```
-
 
 ## Usage in Applications
 
@@ -70,7 +69,15 @@ The map can be added to any component like this:
 - **directly** without any additional library. This is done in the application template [Wegue](https://github.com/wegue-oss/wegue/) or described in this [blog post](https://spatial-dev.guru/2022/02/20/integrating-openlayers-map-with-vuejs-create-map-part-1/)
 - using a **component library** like [vue3-openlayers](https://github.com/MelihAltintas/vue3-openlayers)(for Vue 3) or [vuelayers](https://github.com/ghettovoice/vuelayers) - (for Vue 2) that let's one configure the map via the `<template>` section
 
-## Templates to create a package
+## TODO
 
-- <https://github.com/MatijaNovosel/tri-state-checkbox>
-- <https://github.com/IsraelDCastro/my-library-vue-ts> or <https://medium.com/@blaster203/how-to-create-a-component-library-with-vue-3-vitejs-typescript-8eb41f799045>
+- [ ] make `peerDependency` versions as big as possible
+- [ ] publish to npm and adapt README accordingly
+- [ ] Describe how to add custom composable based the the basic one
+- [ ] Add basic tests using vitest
+- [ ] add dependabot
+- [ ] built demo app as well as npm package using separate config files
+- extra:
+  - [ ] test with different environments, both node and peer dependency versions
+  - [ ] commit lint
+  - [ ] stack blitz
