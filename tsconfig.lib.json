@@ -12,11 +12,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "emitDeclarationOnly": true,
-    "jsx": "preserve",
+    // "jsx": "preserve",
 
     "outDir": "dist",
     "declaration": true,
-
 
     /* Linting */
     "strict": true,
@@ -25,8 +24,8 @@
     "noFallthroughCasesInSwitch": true,
 
     "composite": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
   },
-  "exclude": ["src/App.vue", "src/main.ts"],
-  "include": ["vite.config.ts", "src/index.ts", "src/components/olMap.vue", "src/composables/useOl.ts"],
+  // "exclude": ["src/App.vue", "src/main.ts", "node_modules"],
+  "include": ["src/index.ts", "src/components/olMap.vue", "src/composables/useOl.ts"],
 }

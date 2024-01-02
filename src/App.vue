@@ -22,6 +22,7 @@ import { useOl } from './composables/useOl'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
 import { useRoute } from 'vue-router'
+import { View } from 'ol'
 
 const { map } = useOl()
 const currentRoute = useRoute()
@@ -36,6 +37,14 @@ onMounted(() => {
   map.value.addLayer(
     new TileLayer({
       source: new OSM()
+    })
+  )
+
+  const view = map.value.getView()
+  map.value.setView(
+    new View({
+      center: view.getCenter(),
+      zoom: view.getZoom()
     })
   )
 

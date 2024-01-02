@@ -18,8 +18,9 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite -c vite.app.config.ts",
     "build:app": "vite -c vite.app.config.ts build",
     "build:lib": "npm run build:lib:code && npm run build:lib:types",
     "build:lib:code": "vite -c vite.lib.config.ts build",

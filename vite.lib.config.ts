@@ -5,19 +5,28 @@ import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), dts({ include: ['src'] })],
+  plugins: [
+    vue(),
+    dts({
+      tsconfigPath: './tsconfig.lib.json',
+      rollupTypes: true
+    })
+  ],
   build: {
     copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'VueOlComposable',
+      name: 'vue-ol-composable',
       fileName: 'vue-ol-composable'
     },
+    emptyOutDir: true,
     rollupOptions: {
-      external: ['vue', 'vue-router', 'ol'],
+      external: ['vue', 'vue-router', 'ol', 'ol/Map', 'ol/View', 'ol/extent', 'ol/layer/Base'],
       output: {
         globals: {
-          vue: 'Vue'
+          vue: 'Vue',
+          ol: 'ol',
+          'vue-router': 'vue-router'
         }
       }
     }

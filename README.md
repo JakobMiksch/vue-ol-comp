@@ -37,7 +37,7 @@ Initialize or edit the map in any component, for example in `App.vue`:
 <script setup lang="ts">
 import { fromLonLat } from 'ol/proj'
 import { onMounted } from 'vue'
-import { useOl } from './composables/useOl'
+import { useOl, OlMap } from 'vue-ol-composable'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
 
@@ -60,7 +60,7 @@ The map can be added to any component like this:
 
 ```vue
 <template>
-  <olMap :style="{ width: '500px', height: '100px' }"></olMap>
+  <OlMap :style="{ width: '500px', height: '100px' }"></OlMap>
 </template>
 ```
 

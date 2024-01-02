@@ -1,6 +1,6 @@
 import { computed, readonly, ref, shallowRef, type Ref, type ShallowRef } from 'vue'
-import Map from 'ol/Map.js'
-import View from 'ol/View.js'
+import Map from 'ol/Map'
+import View from 'ol/View'
 import type { Coordinate } from 'ol/coordinate'
 import { createEventHook } from '@vueuse/shared'
 import type { MapBrowserEvent } from 'ol'
