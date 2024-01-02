@@ -69,7 +69,7 @@ export function useOl() {
     onMapSingleClick,
     // NOTE: readonly does not work on map, but computed does to prevent it is re-written
     map: computed(() => map.value),
-    layers: readonly(layers),
+    layers: computed(() => layers.value),
     center: readonly(center),
     extent: readonly(extent),
     mapLoading: readonly(mapLoading),
