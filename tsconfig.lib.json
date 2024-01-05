@@ -12,7 +12,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "emitDeclarationOnly": true,
-    // "jsx": "preserve",
 
     "outDir": "dist",
     "declaration": true,
@@ -26,6 +25,5 @@
     "composite": true,
     "allowSyntheticDefaultImports": true,
   },
-  // "exclude": ["src/App.vue", "src/main.ts", "node_modules"],
-  "include": ["src/index.ts", "src/components/olMap.vue", "src/composables/useOl.ts"],
+  "include": ["src/index.ts", "src/components/OlMap.vue", "src/composables/useOl.ts"],
 }
