@@ -1,5 +1,6 @@
 # vue-ol-comp
 
+[![Lint](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml/badge.svg)](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml)
 **Note**: Project is in **beta**
 
 A [Vue.js](https://vuejs.org/) [composable](https://vuejs.org/guide/reusability/composables) for an [OpenLayers](https://openlayers.org/) map. It makes map-related properties and events globally accessible in the application, while still giving the developer full control over the OpenLayers API.
