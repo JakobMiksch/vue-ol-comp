@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useOl } from '../composables/useOl'
+import { useOl } from '@/composables/useOl'
 
 const {
   layers,

@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { fromLonLat } from 'ol/proj'
 import { onMounted } from 'vue'
-import { useOl } from './composables/useOl'
+import { useOl } from '@/composables/useOl'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
 import { useRoute } from 'vue-router'

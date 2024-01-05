@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import OlMap from '../components/OlMap.vue'
+import OlMap from '@/components/OlMap.vue'
 </script>

@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import OlMap from '../components/OlMap.vue'
-import MapInfoPanel from '../components/MapInfoPanel.vue'
-import MapControlPanel from '../components/MapControlPanel.vue'
+import OlMap from '@/components/OlMap.vue'
+import MapInfoPanel from '@/components/MapInfoPanel.vue'
+import MapControlPanel from '@/components/MapControlPanel.vue'
 </script>

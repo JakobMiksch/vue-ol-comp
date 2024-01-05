@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { useOl } from '../composables/useOl'
+import { useOl } from '@/composables/useOl'
 import { onMounted, ref } from 'vue'
 
 const { map } = useOl()

@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 import { fromLonLat } from 'ol/proj'
-import { useOl } from '../composables/useOl'
+import { useOl } from '@/composables/useOl'
 
 const { map, zoom } = useOl()
 
