@@ -26,6 +26,8 @@ jobs:
     - run: npm run lint
     - run: pwd
     - run: ls
+    - run: ls /home/runner/work/vue-ol-comp/vue-ol-comp/src/components
+    - run: cat /home/runner/work/vue-ol-comp/vue-ol-comp/src/components/OlMap.vue
     - run: npm run build:lib
     - run: npm run build:app
     - run: npm run type-check:app
