@@ -68,7 +68,7 @@ The map can be added to any component like this:
 ## Alternatives ways to use OpenLayers in Vue
 
 - **directly** without any additional library. This is done in the application template [Wegue](https://github.com/wegue-oss/wegue/) or described in this [blog post](https://spatial-dev.guru/2022/02/20/integrating-openlayers-map-with-vuejs-create-map-part-1/)
-- using a **component library** like [vue3-openlayers](https://github.com/MelihAltintas/vue3-openlayers)(for Vue 3) or [vuelayers](https://github.com/ghettovoice/vuelayers) (for Vue 2) that let's one configure the map via the `<template>` section
+- using a **component library** like [vue3-openlayers](https://github.com/MelihAltintas/vue3-openlayers) (for Vue 3) or [vuelayers](https://github.com/ghettovoice/vuelayers) (for Vue 2) that let's one configure the map via the `<template>` section
 
 ## TODO
 
