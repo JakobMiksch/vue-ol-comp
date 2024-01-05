@@ -81,3 +81,4 @@ The map can be added to any component like this:
   - [ ] test with different environments, both node and peer dependency versions
   - [ ] commit lint
   - [ ] stack blitz
+  - [ ] https://keepachangelog.com/en/1.1.0/
