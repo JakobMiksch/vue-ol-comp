@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Lint
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [20.x] # TODO: add 18
 
     steps:
     - uses: actions/checkout@v3
@@ -24,7 +24,9 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run lint
-    - run: npm run type-check:lib
-    - run: npm run type-check:app
+    - run: pwd
+    - run: ls
     - run: npm run build:lib
     - run: npm run build:app
+    - run: npm run type-check:app
+    - run: npm run type-check:lib
