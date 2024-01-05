@@ -1,4 +1,4 @@
-# vue-ol-composable
+# vue-ol-comp
 
 **Note**: Project is in **beta**
 
@@ -22,7 +22,7 @@ npm run dev
 
 ```shell
 # clone repo
-git clone github.com/JakobMiksch/vue-ol-composable
+git clone github.com/JakobMiksch/vue-ol-comp
 
 # enter your applicaton
 cd /PATH/TO/YOUR/APP
@@ -37,7 +37,7 @@ Initialize or edit the map in any component, for example in `App.vue`:
 <script setup lang="ts">
 import { fromLonLat } from 'ol/proj'
 import { onMounted } from 'vue'
-import { useOl, OlMap } from 'vue-ol-composable'
+import { useOl, OlMap } from 'vue-ol-comp'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
 
@@ -81,4 +81,4 @@ The map can be added to any component like this:
   - [ ] test with different environments, both node and peer dependency versions
   - [ ] commit lint
   - [ ] stack blitz
-  - [ ] https://keepachangelog.com/en/1.1.0/
+  - [ ] <https://keepachangelog.com/en/1.1.0/>

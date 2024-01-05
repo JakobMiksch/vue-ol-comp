@@ -1,5 +1,5 @@
 {
-  "name": "vue-ol-composable",
+  "name": "vue-ol-comp",
   "version": "0.0.1",
   "type": "module",
   "files": [
@@ -9,12 +9,12 @@
     "npm": ">=8.0.0 <11.0.0",
     "node": ">18.0.0 <21.0.0"
   },
-  "main": "./dist/vue-ol-composable.umd.cjs",
-  "module": "./dist/vue-ol-composable.js",
+  "main": "./dist/vue-ol-comp.umd.cjs",
+  "module": "./dist/vue-ol-comp.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-ol-composable.js",
-      "require": "./dist/vue-ol-composable.umd.cjs",
+      "import": "./dist/vue-ol-comp.js",
+      "require": "./dist/vue-ol-comp.umd.cjs",
       "types": "./dist/index.d.ts"
     }
   },
