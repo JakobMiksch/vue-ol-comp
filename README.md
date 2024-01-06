@@ -1,7 +1,6 @@
 # vue-ol-comp
 
 [![Lint](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml/badge.svg)](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml)
-**Note**: Project is in **beta**
 
 A [Vue.js](https://vuejs.org/) [composable](https://vuejs.org/guide/reusability/composables) and a [component](https://vuejs.org/guide/essentials/component-basics.html) for an [OpenLayers](https://openlayers.org/) map. It makes map-related properties and events globally accessible, while still giving the developer full control over the OpenLayers API.
 
@@ -76,7 +75,6 @@ The map can be added to any component like this:
 - [ ] publish to npm and adapt README accordingly
 - [ ] Describe how to add custom composable based the the basic one
 - [ ] Add basic tests using vitest
-- [ ] add dependabot
 - [ ] built demo app as well as npm package using separate config files
 - extra:
   - [ ] test with different environments, both node and peer dependency versions
