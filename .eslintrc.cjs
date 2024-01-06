@@ -3,17 +3,17 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   root: true,
-  plugins: ['sonarjs', '@typescript-eslint/eslint-plugin', 'eslint-plugin-tsdoc'],
+  plugins: ['sonarjs', '@typescript-eslint/eslint-plugin', 'eslint-plugin-tsdoc', 'import'],
   extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-recommended',
-    'eslint:recommended',
-    '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier',
-    'plugin:sonarjs/recommended',
-    'plugin:jsdoc/recommended-typescript-error',
+    '@vue/eslint-config-typescript',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/stylistic',
     'plugin:import/recommended',
-    'plugin:import/typescript'
+    'plugin:import/typescript',
+    'plugin:jsdoc/recommended-typescript-error',
+    'plugin:sonarjs/recommended',
+    'plugin:vue/vue3-recommended'
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {

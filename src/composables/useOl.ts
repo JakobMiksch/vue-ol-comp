@@ -9,7 +9,7 @@ import BaseLayer from 'ol/layer/Base'
 
 // global state, created in module scope
 const map: ShallowRef<Map> = shallowRef(new Map({ view: new View({ center: [0, 0], zoom: 1 }) }))
-const layers: Ref<Array<BaseLayer>> = ref([])
+const layers: Ref<BaseLayer[]> = ref([])
 const center: Ref<Coordinate | undefined> = ref()
 const extent: Ref<Extent | undefined> = ref()
 const resolution: Ref<number | undefined> = ref()
