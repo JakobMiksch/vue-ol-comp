@@ -27,7 +27,7 @@ const {
   pointerPixel
 } = useOl()
 
-const humanize = (content: readonly any[] | any[] | undefined): string => {
+const humanize = (content: readonly number[] | number[] | undefined): string => {
   if (!content) {
     return ''
   }

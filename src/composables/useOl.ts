@@ -1,4 +1,4 @@
-import { computed, readonly, ref, shallowRef, type Ref, type ShallowRef } from 'vue'
+import { type Ref, type ShallowRef, computed, readonly, ref, shallowRef } from 'vue'
 import Map from 'ol/Map'
 import View from 'ol/View'
 import type { Coordinate } from 'ol/coordinate'
@@ -63,6 +63,9 @@ view.on(['change', 'change:center', 'change:resolution'], () => {
 })
 syncView(view)
 
+/**
+ * @returns TODO
+ */
 export function useOl() {
   return {
     onMapClick,
