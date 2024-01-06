@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div v-for="entry in listEntries" :key="entry.title">
+    <div
+      v-for="entry in listEntries"
+      :key="entry.title"
+    >
       <b>
         {{ entry.title }}
       </b>
