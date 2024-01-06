@@ -18,7 +18,6 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite -c vite.app.config.ts",
     "build:app": "vite -c vite.app.config.ts build",

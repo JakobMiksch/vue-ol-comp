@@ -9,6 +9,7 @@ module.exports = {
     'eslint-plugin-tsdoc'
   ],
   extends: [
+    "@vue/eslint-config-prettier",
     '@vue/eslint-config-typescript',
     'eslint:recommended',
     'plugin:@typescript-eslint/stylistic',
@@ -26,6 +27,13 @@ module.exports = {
     'tsdoc/syntax': 'warn',
     'vue/html-self-closing': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+        tabWidth: 2,
+      },
+    ],
     'sort-imports': [
       'error',
       {

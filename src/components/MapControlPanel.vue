@@ -1,14 +1,8 @@
 <template>
   <div :style="{ display: 'flex' }">
-    <button @click="changeZoom(1)">
-      Zoom in
-    </button>
-    <button @click="changeZoom(-1)">
-      Zoom out
-    </button>
-    <button @click="setRandomCenter()">
-      Random center
-    </button>
+    <button @click="changeZoom(1)">Zoom in</button>
+    <button @click="changeZoom(-1)">Zoom out</button>
+    <button @click="setRandomCenter()">Random center</button>
   </div>
 </template>
 
