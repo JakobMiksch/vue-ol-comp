@@ -2,7 +2,7 @@ name: Deploy demo  app
 
 on:
   push:
-    branches: ["main"]
+    branches: []  # TODO: re-activate once Pages activated ["main"]
 
   workflow_dispatch:
 
