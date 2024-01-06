@@ -56,7 +56,7 @@ The map can be added to any component like this:
 
 ```vue
 <template>
-  <OlMap :style="{ width: '500px', height: '100px' }"></OlMap>
+  <OlMap :style="{ width: '500px', height: '100px' }"/>
 </template>
 ```
 
