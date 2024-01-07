@@ -68,18 +68,29 @@ syncView(view)
  */
 export function useOl() {
   return {
+    // TODO: docs
     onMapClick,
+    // TODO: docs
     onMapSingleClick,
-    // NOTE: readonly does not work on map, but computed does to prevent it is re-written
+    /** The OpenLayers map instance */
     map: computed(() => map.value),
+    /** The layers registered on the map */
     layers: computed(() => layers.value),
+    /** The center of the map */
     center: readonly(center),
+    /** The extent of the map */
     extent: readonly(extent),
+    /** If map is currently loading */
     mapLoading: readonly(mapLoading),
+    /** If map is currently moving */
     mapMoving: readonly(mapMoving),
+    /** The zoom of the map */
     zoom: readonly(zoom),
+    /** The rounded zoom of the map */
     zoomRounded,
+    /** The coordinate of the pointer (mouse cursor) */
     pointerCoordinate: readonly(pointerCoordinate),
+    /** The pixel of the point (mouse cursour) */
     pointerPixel: readonly(pointerPixel)
   }
 }
