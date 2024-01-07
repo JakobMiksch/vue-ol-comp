@@ -3,15 +3,15 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   root: true,
-  plugins: ['sonarjs', '@typescript-eslint/eslint-plugin', 'eslint-plugin-tsdoc'],
+  plugins: ['vue', '@typescript-eslint', 'sonarjs'],
   extends: [
+    'plugin:vue/vue3-recommended',
     '@vue/eslint-config-prettier',
-    '@vue/eslint-config-typescript',
     'eslint:recommended',
     'plugin:@typescript-eslint/stylistic',
-    'plugin:jsdoc/recommended-typescript-error',
     'plugin:sonarjs/recommended',
-    'plugin:vue/vue3-recommended'
+    '@vue/eslint-config-typescript',
+    'plugin:jsdoc/recommended-typescript-error'
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -20,16 +20,8 @@ module.exports = {
     extraFileExtensions: ['.vue']
   },
   rules: {
-    'tsdoc/syntax': 'warn',
     'vue/html-self-closing': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-        tabWidth: 2
-      }
-    ],
     'sort-imports': [
       'error',
       {
