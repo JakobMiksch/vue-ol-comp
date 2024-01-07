@@ -53,12 +53,19 @@ map.value.on('moveend', () => {
 
 const view = map.value.getView()
 const syncView = (view: View) => {
+  console.log('SYNC VIEW')
+
   center.value = view?.getCenter()
   resolution.value = view?.getResolution()
   zoom.value = view?.getZoom()
+  console.log(zoom.value)
+
   extent.value = view?.calculateExtent()
 }
+// TODO: when view is changed externally, the listeners are gone
 view.on(['change', 'change:center', 'change:resolution'], () => {
+  console.log('ON VIEW CHANGE')
+
   syncView(view)
 })
 syncView(view)
@@ -90,7 +97,7 @@ export function useOl() {
     zoomRounded,
     /** The coordinate of the pointer (mouse cursor) */
     pointerCoordinate: readonly(pointerCoordinate),
-    /** The pixel of the point (mouse cursour) */
+    /** The pixel of the point (mouse cursor) */
     pointerPixel: readonly(pointerPixel)
   }
 }
