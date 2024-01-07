@@ -41,6 +41,8 @@ onMounted(() => {
   )
 
   const view = map.value.getView()
+  // TODO: when view is changed externally, the listeners are gone
+
   map.value.setView(
     new View({
       center: view.getCenter(),
