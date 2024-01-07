@@ -40,15 +40,16 @@ onMounted(() => {
     })
   )
 
-  const view = map.value.getView()
+  // const view = map.value.getView()
   // TODO: when view is changed externally, the listeners are gone
 
-  map.value.setView(
-    new View({
-      center: view.getCenter(),
-      zoom: view.getZoom()
-    })
-  )
+  // TODO: WHY? Maybe for constaining extent? 
+  // map.value.setView(
+  //   new View({
+  //     center: view.getCenter(),
+  //     zoom: view.getZoom()
+  //   })
+  // )
 
   map.value.getView().setCenter(fromLonLat([11, 47]))
   map.value.getView().setZoom(15)
