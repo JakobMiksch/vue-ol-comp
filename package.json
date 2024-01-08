@@ -49,7 +49,7 @@
     "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-tsdoc": "^0.2.17",
     "prettier": "^3.0.3",
-    "typescript": "~5.2.0",
+    "typescript": "~5.3.3",
     "vite": "^5.0.11",
     "vite-plugin-dts": "^3.6.4",
     "vue": "^3.4.5",
