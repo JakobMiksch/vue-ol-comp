@@ -1,4 +1,4 @@
-# vue-ol-comp [![Lint](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml/badge.svg)](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml)  <!-- markdown-link-check-disable-line --> 
+# vue-ol-comp [![Lint](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml/badge.svg)](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml) [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/JakobMiksch/vue-ol-comp) <!-- markdown-link-check-disable-line --> 
 
 A [composable](https://vuejs.org/guide/reusability/composables) making the state of an [OpenLayers](https://openlayers.org/) map reactively available in Vue.
 
@@ -67,13 +67,5 @@ The map can be added to any component like this:
 
 ## TODO
 
-- [ ] make `peerDependency` versions as big as possible
 - [ ] publish to npm and adapt README accordingly
 - [ ] Describe how to add custom composable based the the basic one
-- [ ] Add basic tests using vitest
-- [ ] built demo app as well as npm package using separate config files
-- extra:
-  - [ ] test with different environments, both node and peer dependency versions
-  - [ ] commit lint
-  - [ ] stack blitz
-  - [ ] <https://keepachangelog.com/en/1.1.0/>
