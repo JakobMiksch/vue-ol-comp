@@ -68,4 +68,3 @@ The map can be added to any component like this:
 ## TODO
 
 - [ ] publish to npm and adapt README accordingly
-- [ ] Describe how to add custom composable based the the basic one
