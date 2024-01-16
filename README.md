@@ -42,6 +42,8 @@ The map can be added to any component like this:
 </template>
 ```
 
+Make sure `ol/ol.css` is imported in your CSS.
+
 ## Development
 
 ```shell
