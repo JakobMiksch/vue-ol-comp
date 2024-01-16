@@ -2,7 +2,7 @@ name: Deploy demo  app
 
 on:
   push:
-    branches: []  # TODO: re-activate once Pages activated ["main"]
+    branches: ["main"]
 
   workflow_dispatch:
 
@@ -28,7 +28,7 @@ jobs:
         uses: actions/configure-pages@v4
       - run: npm ci
       - run: npm run lint
-      - run: npm run check-types:app
+      - run: npm run type-check:app
       - run: npm run build:app
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
