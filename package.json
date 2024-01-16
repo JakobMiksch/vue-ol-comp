@@ -4,21 +4,31 @@
   "type": "module",
   "description": "A composable connecting Vue with OpenLayers",
   "license": "MIT",
-  "keywords": ["vue", "openlayers", "gis", "webgis", "webmapping", "state", "composable"],
+  "keywords": [
+    "vue",
+    "openlayers",
+    "gis",
+    "webgis",
+    "webmapping",
+    "state",
+    "composable"
+  ],
   "homepage": "https://github.com/jakobmiksch/vue-ol-comp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jakobmiksch/vue-ol-comp"
+    "url": "git+https://github.com/jakobmiksch/vue-ol-comp.git"
   },
   "bugs": {
     "url": "https://github.com/jakobmiksch/vue-ol-comp/issues",
     "email": "info@jakobmiksch.eu"
   },
-  "contributors": [{
-    "name": "Jakob Miksch",
-    "email": "info@jakobmiksch.eu",
-    "url": "https://jakobmiksch.eu"
-  }],
+  "contributors": [
+    {
+      "name": "Jakob Miksch",
+      "email": "info@jakobmiksch.eu",
+      "url": "https://jakobmiksch.eu"
+    }
+  ],
   "files": [
     "dist"
   ],
