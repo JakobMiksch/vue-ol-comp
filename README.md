@@ -2,6 +2,8 @@
 
 This [composable](https://vuejs.org/guide/reusability/composables) exposes reactive variables to make the state of an [OpenLayers](https://openlayers.org/) map available in Vue. It provides easy access to commonly used variables such as `map`, `layers`, `center`, `extent`, `zoom`, `pointerCoordinate`, `pointerPixel`, and more. See [src/composables/useOl.ts](src/composables/useOl.ts) for implementation details.
 
+Demo application: <https://jakobmiksch.github.io/vue-ol-comp/>
+
 ## Usage
 
 ```shell
@@ -45,6 +47,8 @@ The map can be added to any component like this:
 Make sure `ol/ol.css` is imported in your CSS.
 
 ## Development
+
+The development is done using a demo app, where all features can directly be tested.
 
 ```shell
 # install dependencies
