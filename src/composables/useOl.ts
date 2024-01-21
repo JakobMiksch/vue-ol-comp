@@ -57,19 +57,14 @@ const view = map.value.getView()
  * @param view - The View object to sync with.
  */
 const syncView = (view: View) => {
-  console.log('SYNC VIEW')
-
   center.value = view?.getCenter()
   resolution.value = view?.getResolution()
   zoom.value = view?.getZoom()
-  console.log(zoom.value)
 
   extent.value = view?.calculateExtent()
 }
 // TODO: when view is changed externally, the listeners are gone
 view.on(['change', 'change:center', 'change:resolution'], () => {
-  console.log('ON VIEW CHANGE')
-
   syncView(view)
 })
 syncView(view)
