@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <!-- markdown-link-check-disable-line -->
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/JakobMiksch/vue-ol-comp) <!-- markdown-link-check-disable-line -->
 
-This [composable](https://vuejs.org/guide/reusability/composables) exposes reactive variables to make the state of an [OpenLayers](https://openlayers.org/) map available in Vue. It provides easy access to commonly used variables such as `map`, `layers`, `center`, `extent`, `zoom`, `pointerCoordinate`, `pointerPixel`, and more. See [src/composables/useOl.ts](src/composables/useOl.ts) for implementation details.
+This [composable](https://vuejs.org/guide/reusability/composables) exposes reactive variables to make the state of an [OpenLayers](https://openlayers.org/) map available across different Vue components. It provides easy access to commonly used variables such as `map`, `layers`, `center`, `extent`, `zoom`, `pointerCoordinate`, `pointerPixel`, and more. See [src/composables/useOl.ts](src/composables/useOl.ts) for implementation details.
 
 Demo application: <https://jakobmiksch.github.io/vue-ol-comp/>
 
@@ -65,7 +65,7 @@ npm run dev
 
 The application will be accessible at <http://localhost:5173/> <!-- markdown-link-check-disable-line -->
 
-## Alternatives ways to use OpenLayers in Vue
+## Alternative ways to use OpenLayers in Vue
 
 - **directly** without any additional library. This is done in the application template [Wegue](https://github.com/wegue-oss/wegue/) or described in this [blog post](https://spatial-dev.guru/2022/02/20/integrating-openlayers-map-with-vuejs-create-map-part-1/)
 - using a **component library** like [vue3-openlayers](https://github.com/MelihAltintas/vue3-openlayers) (for Vue 3) or [vuelayers](https://github.com/ghettovoice/vuelayers) (for Vue 2) that let's one configure the map via the `<template>` section
