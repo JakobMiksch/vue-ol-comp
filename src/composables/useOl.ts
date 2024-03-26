@@ -76,9 +76,9 @@ syncMapProperties()
  */
 export function useOl() {
   return {
-    // TODO: docs
+    /** Hook executed on map click */
     onMapClick,
-    // TODO: docs
+    /** Hook executed on single map click */
     onMapSingleClick,
     /** The OpenLayers map instance */
     map: computed(() => map.value),
