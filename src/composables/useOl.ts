@@ -52,22 +52,23 @@ map.value.on('moveend', () => {
 })
 
 const view = map.value.getView()
-/**
- * Synchronizes the view with the provided View object.
- * @param view - The View object to sync with.
- */
-const syncView = (view: View) => {
+
+const syncMapProperties = () => {
   center.value = view?.getCenter()
   resolution.value = view?.getResolution()
   zoom.value = view?.getZoom()
-
   extent.value = view?.calculateExtent()
 }
+
 // TODO: when view is changed externally, the listeners are gone
 view.on(['change', 'change:center', 'change:resolution'], () => {
-  syncView(view)
+  syncMapProperties()
 })
-syncView(view)
+map.value.on('change:size', () => {
+  syncMapProperties()
+})
+
+syncMapProperties()
 
 /**
  * A hook that returns an object with various properties and functions related to the OpenLayers map.
