@@ -27,20 +27,22 @@ const {
   pointerPixel
 } = useOl()
 
-const humanize = (content: readonly number[] | number[] | undefined): string => {
-  if (!content) {
-    return ''
-  }
-  return content.map(Math.round).join(', ')
-}
+/**
+ * Convert a number array to a human readable string separated by commas
+ * @param numberArray The number array
+ * @returns The numbers separated by commans
+ */
+const humanizeNumberArray = (numberArray: readonly number[] | number[] | undefined): string =>
+  numberArray ? numberArray.map(Math.round).join(', ') : ''
+
 const listEntries = computed(() => [
-  { title: 'Count Layers', value: layers.value ? layers.value.length : 'UNGÜLTIG' },
-  { title: 'Center', value: humanize(center?.value) },
-  { title: 'Zoom', value: `${zoomRounded.value}, ${Math.round((zoom.value || 0) * 100) / 100}` },
-  { title: 'Extent', value: humanize(extent.value) },
+  { title: 'Count Layers', value: layers.value ? layers.value.length : 'invalid' },
+  { title: 'Center', value: humanizeNumberArray(center?.value) },
+  { title: 'Zoom', value: `${zoomRounded.value}, ${zoom.value?.toFixed(2)}` },
+  { title: 'Extent', value: humanizeNumberArray(extent.value) },
   { title: 'Map Loading', value: mapLoading.value ? '🟢' : '🔴' },
   { title: 'Map Moving', value: mapMoving.value ? '🟢' : '🔴' },
-  { title: 'Pointer Coordinate', value: humanize(pointerCoordinate.value) },
-  { title: 'Pointer Pixel', value: humanize(pointerPixel.value) }
+  { title: 'Pointer Coordinate', value: humanizeNumberArray(pointerCoordinate.value) },
+  { title: 'Pointer Pixel', value: humanizeNumberArray(pointerPixel.value) }
 ])
 </script>
