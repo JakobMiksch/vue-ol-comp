@@ -1,4 +1,4 @@
-# vue-ol-comp 
+# vue-ol-comp
 
 [![NPM Version](https://badgen.net/npm/v/vue-ol-comp)](https://www.npmjs.com/package/vue-ol-comp) <!-- markdown-link-check-disable-line -->
 [![Lint](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml/badge.svg)](https://github.com/JakobMiksch/vue-ol-comp/actions/workflows/lint.yml) <!-- markdown-link-check-disable-line -->
