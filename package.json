@@ -1,6 +1,6 @@
 {
   "name": "vue-ol-comp",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "type": "module",
   "description": "A composable connecting Vue with OpenLayers",
   "license": "MIT",
