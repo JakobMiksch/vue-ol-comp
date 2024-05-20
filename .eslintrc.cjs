@@ -9,7 +9,7 @@ module.exports = {
     '@vue/eslint-config-prettier',
     'eslint:recommended',
     'plugin:@typescript-eslint/stylistic',
-    'plugin:sonarjs/recommended',
+    'plugin:sonarjs/recommended-legacy',
     '@vue/eslint-config-typescript',
     'plugin:jsdoc/recommended-typescript-error'
   ],
