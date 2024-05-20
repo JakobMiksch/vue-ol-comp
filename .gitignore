@@ -30,3 +30,6 @@ coverage
 
 # npm packages
 *.tgz
+
+# npm
+.npmrc
