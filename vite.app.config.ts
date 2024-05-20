@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'dist-app'
   },
-  base: "/vue-ol-comp/",
+  base: '/vue-ol-comp/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
