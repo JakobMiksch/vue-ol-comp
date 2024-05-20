@@ -1,6 +1,6 @@
 name: Publish Package to npmjs
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
   release:
     types: [published]
 jobs:
@@ -19,6 +19,7 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - run: npm install
+      - run: git status
       - run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
