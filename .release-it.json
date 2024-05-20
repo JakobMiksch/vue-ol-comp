@@ -1,4 +1,12 @@
 {
+
+  "hooks": {
+    "before:init": [
+      "npm run lint",
+      "npm run format",
+      "npm run build:lib"
+    ]
+  },
   "github": {
     "release": true
   }
