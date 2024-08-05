@@ -4,4 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-    group: true
+    groups:
+        all-dependencies:
+          patterns:
+            - "*"
