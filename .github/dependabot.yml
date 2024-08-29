@@ -4,15 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-    groups:
-      patch-dependencies:
-        patterns:
-          - "*"
-        update-types:
-          - "patch"
-        automerge: true
-      minor-dependencies:
-        patterns:
-          - "*"
-        update-types:
-          - "minor"
+    automerge: true
+    automerge-type: "patch"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
