@@ -10,3 +10,9 @@ updates:
           - "*"
         update-types:
           - "patch"
+        automerge: true
+      minor-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
