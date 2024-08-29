@@ -5,6 +5,8 @@ updates:
     schedule:
       interval: "monthly"
     groups:
-        all-dependencies:
-          patterns:
-            - "*"
+      patch-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
