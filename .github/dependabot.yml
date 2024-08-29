@@ -5,6 +5,9 @@ updates:
     schedule:
       interval: "monthly"
     groups:
-        all-dependencies:
-          patterns:
-            - "*"
+      patch-dependencies:
+        patterns:
+          - "*"
+        group:
+          update-types:
+            - "version-update:semver-patch"
