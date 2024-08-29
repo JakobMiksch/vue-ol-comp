@@ -9,4 +9,4 @@ updates:
         patterns:
           - "*"
         update-types:
-          - "version-update:semver-patch"
+          - "patch"
