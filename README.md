@@ -5,7 +5,21 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <!-- markdown-link-check-disable-line -->
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/JakobMiksch/vue-ol-comp) <!-- markdown-link-check-disable-line -->
 
-This [composable](https://vuejs.org/guide/reusability/composables) exposes reactive variables to make the state of an [OpenLayers](https://openlayers.org/) map available across different Vue components. It provides easy access to commonly used variables such as `map`, `layers`, `center`, `extent`, `zoom`, `pointerCoordinate`, `pointerPixel`, and more. See [src/composables/useOl.ts](src/composables/useOl.ts) for implementation details.
+## 🌏  Open in the Cloud 
+
+Click any of the buttons below to start a new development environment to demo or contribute to the codebase without having to install anything on your machine:
+
+[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://vscode.dev/github/jakobmiksch/vue-ol-comp)
+[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/jakobmiksch/vue-ol-comp)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jakobmiksch/vue-ol-comp)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/jakobmiksch/vue-ol-comp)
+[![Edit in Codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/jakobmiksch/vue-ol-comp)
+[![Open in Repl.it](https://replit.com/badge/github/withastro/astro)](https://replit.com/github/jakobmiksch/vue-ol-comp)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/jakobmiksch/vue-ol-comp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jakobmiksch/vue-ol-comp)
+
+This [composable](https://vuejs.org/guide/reusability/composables) 
+exposes reactive variables to make the state of an [OpenLayers](https://openlayers.org/) map available across different Vue components. It provides easy access to commonly used variables such as `map`, `layers`, `center`, `extent`, `zoom`, `pointerCoordinate`, `pointerPixel`, and more. See [src/composables/useOl.ts](src/composables/useOl.ts) for implementation details.
 
 Demo application: <https://jakobmiksch.github.io/vue-ol-comp/>
 
